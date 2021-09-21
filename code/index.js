@@ -52,10 +52,19 @@ var app = new function () {
                         alertify.set('notifier', 'position', 'top-right');
                         alertify.error(data.correo);
                         this.correo.focus()
+                    } else if (data.nombres) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.error(data.nombres);
+                        this.nombres.focus()
+                    } else if (data.fecha) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.error(data.fecha);
+                        this.fecha.focus()
                     } else {
                         alertify.set('notifier', 'position', 'top-right');
                         alertify.success(data.datos);
                         this.listado()
+                        this.limpiar()
                     }
                 })
                 .catch(error => console.error(error))
@@ -77,15 +86,23 @@ var app = new function () {
                         alertify.set('notifier', 'position', 'top-right');
                         alertify.error(data.correo);
                         this.correo.focus()
+                    } else if (data.nombres) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.error(data.nombres);
+                        this.nombres.focus()
+                    } else if (data.fecha) {
+                        alertify.set('notifier', 'position', 'top-right');
+                        alertify.error(data.fecha);
+                        this.fecha.focus()
                     } else {
                         alertify.set('notifier', 'position', 'top-right');
                         alertify.success(data.datos);
                         this.listado()
+                        this.limpiar()
                     }
                 })
                 .catch(error => console.error(error))
         }
-        this.limpiar()
     }
     this.limpiar = () => {
         document.getElementById("formulario").reset()
